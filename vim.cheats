@@ -1,0 +1,4 @@
+Use :cq to exit with error
+Fancy diffing: https://vim.fandom.com/wiki/A_better_Vimdiff_Git_mergetool
+Access time machine: earlier/later nn/m
+g^g gives file stats: line/word/char/byte count
