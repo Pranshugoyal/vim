@@ -117,7 +117,7 @@ call s:Defn('SpecialKey', s:fg('fade'))
 call s:Defn('NonText', s:fg('fade-more'))
 call s:Link('LineNr', 'NonText')
 call s:Link('CursorLineNr', 'SpecialKey')
-call s:None('CursorLine')
+call s:Defn('CursorLine', s:fg('attention'), s:bg('fade-more'))
 
 call s:Defn('VertSplit', s:fg('fade'), s:bg('fade-more'))
 
