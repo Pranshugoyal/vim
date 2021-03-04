@@ -9,6 +9,7 @@ let g:netrw_winsize = 13
 set number
 set relativenumber
 colorscheme noclown
+set wildmenu
 "highlight CursorLine cterm=NONE ctermfg=red
 
 augroup CursorLineOnlyInActiveWindow
@@ -36,5 +37,5 @@ set tabstop=4
 set shiftwidth=4
 set smartindent
 " On pressing tab, insert 4 spaces
-set expandtab
+"set expandtab
 
