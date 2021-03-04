@@ -1,5 +1,7 @@
 Use :cq to exit with error
 Fancy diffing: https://vim.fandom.com/wiki/A_better_Vimdiff_Git_mergetool
+'. : dot can also be used as a mark to go to the last edited line
+]p : paste and indent pasted text
 Access time machine: earlier/later nn/m
 g^g gives file stats: line/word/char/byte count
 set hidden to allow moving in/out from unsaved buffer
@@ -8,6 +10,9 @@ ctrl-shift-6: Jump between window pairs
 ctrl-Z to suspend vim session and back to originating terminal, fg<enter> to come back
 :browse oldfiles- allows to open files from recent files
 :set nowrapscan to turn off search wrapping
+each vim exit saves its position in a mark 0 register
+read input from STDIN by using "vim -" as command: ls | vim -
+vim $(git diff --name-only --diff-filter=U)
 
 netrw tips:
     - I: toggle top banner
@@ -18,3 +23,4 @@ netrw tips:
     - R: rename file under cursor
     - t: open file in new tab
     - -: Go to parent directory
+    - gh: hide dotfiles
