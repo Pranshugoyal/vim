@@ -10,6 +10,7 @@ ctrl-shift-6: Jump between window pairs
 ctrl-Z to suspend vim session and back to originating terminal, fg<enter> to come back
 :browse oldfiles- allows to open files from recent files
 :set nowrapscan to turn off search wrapping
+:set wrap linebreak to wrap lines at word boundries
 each vim exit saves its position in a mark 0 register
 read input from STDIN by using "vim -" as command: ls | vim -
 vim $(git diff --name-only --diff-filter=U)
