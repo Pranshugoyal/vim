@@ -12,6 +12,9 @@ colorscheme noclown
 set wildmenu
 "highlight CursorLine cterm=NONE ctermfg=red
 
+"Show commands as they are types
+set showcmd
+
 augroup CursorLineOnlyInActiveWindow
   autocmd!
   autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
