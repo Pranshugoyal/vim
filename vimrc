@@ -8,6 +8,7 @@ let g:netrw_winsize = 13
 
 set number
 set relativenumber
+set ruler
 colorscheme noclown
 set wildmenu
 "highlight CursorLine cterm=NONE ctermfg=red
@@ -19,6 +20,12 @@ augroup CursorLineOnlyInActiveWindow
   autocmd!
   autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
   autocmd WinLeave * setlocal nocursorline
+augroup END 
+
+augroup RelativeNumberingOnlyInActiveWindow
+  autocmd!
+  autocmd VimEnter,WinEnter,BufWinEnter * setlocal relativenumber
+  autocmd WinLeave * setlocal norelativenumber
 augroup END 
 
 "Enable mouse in insert mode
@@ -38,7 +45,7 @@ set whichwrap+=<,>,h,l
 "Indent settings
 set tabstop=4
 set shiftwidth=4
-set smartindent
+"set smartindent
 " On pressing tab, insert 4 spaces
 "set expandtab
 
