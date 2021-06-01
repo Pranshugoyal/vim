@@ -12,6 +12,8 @@ set ruler
 colorscheme noclown
 set wildmenu
 "highlight CursorLine cterm=NONE ctermfg=red
+set completeopt+=noselect
+set ignorecase
 
 "Show commands as they are types
 set showcmd
@@ -45,7 +47,6 @@ set whichwrap+=<,>,h,l
 "Indent settings
 set tabstop=4
 set shiftwidth=4
-"set smartindent
-" On pressing tab, insert 4 spaces
-"set expandtab
+set smartindent
 
+filetype plugin on
