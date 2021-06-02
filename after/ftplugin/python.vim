@@ -1,6 +1,7 @@
 
 "Python specific settings
 nnoremap \\ :w \| !python3 %
+syntax on
 
 "Don't show pyc folder in netrw
 let g:netrw_list_hide= '.*\.pyc$'
