@@ -11,7 +11,7 @@ set relativenumber
 set ruler
 colorscheme noclown
 set wildmenu
-"highlight CursorLine cterm=NONE ctermfg=red
+set noequalalways
 set completeopt+=noselect
 set ignorecase
 
@@ -33,13 +33,15 @@ augroup END
 "Enable mouse in insert mode
 set mouse=i
 set clipboard=unnamed
+nnoremap Y y$
+
 
 "Enable project specific vimrc,
 set exrc
 set secure
 
 "Keeps cursor 4 lines from edge
-set scrolloff=4
+set scrolloff=2
 
 "Allows arrow keys to change line
 set whichwrap+=<,>,h,l
@@ -50,3 +52,24 @@ set shiftwidth=4
 set smartindent
 
 filetype plugin on
+"Add command to quickly edit settings for current file type
+com! EditFTPlugin exe 'e ~/.vim/after/ftplugin/' . &filetype . '.vim'
+packadd sonokai
+
+"Package manager
+function PackageManagerInit()
+	packadd minpac
+	call minpac#init()
+	call minpac#add('k-takata/minpac', {'type':'opt'})
+
+	"Colorschemes
+	call minpac#add('sainnhe/sonokai', {'type': 'opt'})
+
+	"Features
+	call minpac#add('vim-syntastic/syntastic', {'type': 'opt'})
+	call minpac#add('yegappan/taglist', {'type': 'opt'})
+
+	"Language support
+	call minpac#add('rust-lang/rust.vim', {'type': 'opt'})
+	call minpac#add('faith/vim-go', {'type': 'opt'})
+endfunction
