@@ -9,32 +9,16 @@ let g:netrw_winsize = 13
 set number
 set relativenumber
 set ruler
-colorscheme noclown
 set wildmenu
 set noequalalways
 set completeopt+=noselect
 set ignorecase
-
-"Show commands as they are types
 set showcmd
-
-augroup CursorLineOnlyInActiveWindow
-  autocmd!
-  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-  autocmd WinLeave * setlocal nocursorline
-augroup END 
-
-augroup RelativeNumberingOnlyInActiveWindow
-  autocmd!
-  autocmd VimEnter,WinEnter,BufWinEnter * setlocal relativenumber
-  autocmd WinLeave * setlocal norelativenumber
-augroup END 
 
 "Enable mouse in insert mode
 set mouse=i
 set clipboard=unnamed
 nnoremap Y y$
-
 
 "Enable project specific vimrc,
 set exrc
@@ -51,10 +35,28 @@ set tabstop=4
 set shiftwidth=4
 set smartindent
 
+packadd sonokai
+if &diff
+    colorscheme sonokai
+else
+	colorscheme noclown
+endif
+
+augroup CursorLineOnlyInActiveWindow
+  autocmd!
+  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  autocmd WinLeave * setlocal nocursorline
+augroup END 
+
+augroup RelativeNumberingOnlyInActiveWindow
+  autocmd!
+  autocmd VimEnter,WinEnter,BufWinEnter * setlocal relativenumber
+  autocmd WinLeave * setlocal norelativenumber
+augroup END 
+
 filetype plugin on
 "Add command to quickly edit settings for current file type
 com! EditFTPlugin exe 'e ~/.vim/after/ftplugin/' . &filetype . '.vim'
-packadd sonokai
 
 "Package manager
 function PackageManagerInit()
@@ -64,6 +66,7 @@ function PackageManagerInit()
 
 	"Colorschemes
 	call minpac#add('sainnhe/sonokai', {'type': 'opt'})
+	call minpac#add('arzg/vim-colors-xcode', {'type': 'opt'})
 
 	"Features
 	call minpac#add('vim-syntastic/syntastic', {'type': 'opt'})
@@ -71,5 +74,5 @@ function PackageManagerInit()
 
 	"Language support
 	call minpac#add('rust-lang/rust.vim', {'type': 'opt'})
-	call minpac#add('faith/vim-go', {'type': 'opt'})
+	call minpac#add('fatih/vim-go', {'type': 'opt'})
 endfunction
