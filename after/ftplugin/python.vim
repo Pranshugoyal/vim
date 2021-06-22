@@ -10,5 +10,3 @@ let g:netrw_list_hide= '.*\.pyc$'
 "Set python syntax checker as python3 by default
 let g:syntastic_python_python_exec = '/usr/local/bin/python3'
 packadd syntastic
-
-set nosmartindent
