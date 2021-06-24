@@ -24,7 +24,7 @@ nnoremap Y y$
 set exrc
 set secure
 
-"Keeps cursor 4 lines from edge
+"Keeps cursor 2 lines from edge
 set scrolloff=2
 
 "Allows arrow keys to change line
@@ -35,9 +35,18 @@ set tabstop=4
 set shiftwidth=4
 set smartindent
 
-packadd sonokai
-if &diff
+function Sonokai()
+    syntax on
+    packadd sonokai
+    let g:sonokai_show_eob=0
+	let g:sonokai_disable_italic_comment = 1
+    let g:sonokai_better_performance = 1
+    "let g:sonokai_style='atlantis'
     colorscheme sonokai
+endfunction
+
+if &diff
+    call Sonokai()
 else
 	colorscheme noclown
 endif
@@ -75,4 +84,10 @@ function PackageManagerInit()
 	"Language support
 	call minpac#add('rust-lang/rust.vim', {'type': 'opt'})
 	call minpac#add('fatih/vim-go', {'type': 'opt'})
+
+	"Git support
+	call minpac#add('airblade/vim-gitgutter', {'type': 'opt'})
+	call minpac#add('tpope/vim-fugitive', {'type': 'opt'})
+
+    call minpac#update()
 endfunction
