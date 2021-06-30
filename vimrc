@@ -21,8 +21,7 @@ set clipboard=unnamed
 nnoremap Y y$
 
 "Enable project specific vimrc,
-set exrc
-set secure
+set secure exrc 
 
 "Keeps cursor 2 lines from edge
 set scrolloff=2
@@ -35,7 +34,7 @@ set tabstop=4
 set shiftwidth=4
 set smartindent
 
-function Sonokai()
+function SonokaiLoad()
     syntax on
     packadd sonokai
     let g:sonokai_show_eob=0
@@ -44,9 +43,10 @@ function Sonokai()
     "let g:sonokai_style='atlantis'
     colorscheme sonokai
 endfunction
+com! Sonokai exe 'call SonokaiLoad()'
 
 if &diff
-    call Sonokai()
+    call SonokaiLoad()
 else
 	colorscheme noclown
 endif
