@@ -89,5 +89,8 @@ function PackageManagerInit()
 	call minpac#add('airblade/vim-gitgutter', {'type': 'opt'})
 	call minpac#add('tpope/vim-fugitive', {'type': 'opt'})
 
+	"Debug support
+	call minpac#add('puremourning/vimspector', {'type': 'opt'})
+
     call minpac#update()
 endfunction
