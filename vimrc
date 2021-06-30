@@ -69,6 +69,11 @@ com! EditFTPlugin exe 'e ~/.vim/after/ftplugin/' . &filetype . '.vim'
 
 "Package manager
 function PackageManagerInit()
+	if !isdirectory(expand('~/.vim/pack/minpac'))
+		echo "Package Manager not installed"
+		return
+	endif
+
 	packadd minpac
 	call minpac#init()
 	call minpac#add('k-takata/minpac', {'type':'opt'})
