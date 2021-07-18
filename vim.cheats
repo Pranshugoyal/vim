@@ -14,6 +14,7 @@ ctrl-Z to suspend vim session and back to originating terminal, fg<enter> to com
 each vim exit saves its position in a mark 0 register
 read input from STDIN by using "vim -" as command: ls | vim -
 vim $(git diff --name-only --diff-filter=U)
+:ownsyntax allows setting syntax highlight for individual windows selectively
 
 netrw tips:
     - I: toggle top banner
