@@ -44,6 +44,7 @@ function SonokaiLoad()
     colorscheme sonokai
 endfunction
 com! Sonokai exe 'call SonokaiLoad()'
+com! Drawer exe '35vs . | wincmd l'
 
 if &diff
     call SonokaiLoad()
