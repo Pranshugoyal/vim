@@ -31,21 +31,21 @@ com! Sonokai exe 'call SonokaiLoad()'
 com! Drawer exe '35vs . | wincmd l'
 
 if &diff
-    call SonokaiLoad()
+	call SonokaiLoad()
 else
 	colorscheme noclown
 endif
 
 augroup CursorLineOnlyInActiveWindow
-  autocmd!
-  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-  autocmd WinLeave * setlocal nocursorline
+	autocmd!
+	autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+	autocmd WinLeave * setlocal nocursorline
 augroup END 
 
 augroup RelativeNumberingOnlyInActiveWindow
-  autocmd!
-  autocmd VimEnter,WinEnter,BufWinEnter * setlocal relativenumber
-  autocmd WinLeave * setlocal norelativenumber
+	autocmd!
+	autocmd VimEnter,WinEnter,BufWinEnter * setlocal relativenumber
+	autocmd WinLeave * setlocal norelativenumber
 augroup END 
 
 filetype plugin on
