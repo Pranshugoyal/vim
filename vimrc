@@ -1,5 +1,5 @@
 
-source pluginInit.vim
+source ~/.vim/pluginInit.vim
 
 call NetrwConfig()
 set number relativenumber signcolumn=number
