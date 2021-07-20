@@ -28,17 +28,17 @@ function PackageManagerInit()
 	"Debug support
 	call minpac#add('puremourning/vimspector', {'type': 'opt'})
 
-    call minpac#update()
+	call minpac#update()
 endfunction
 
 function SonokaiLoad()
-    syntax on
-    packadd sonokai
-    let g:sonokai_show_eob=0
+	syntax on
+	packadd sonokai
+	let g:sonokai_show_eob=0
 	let g:sonokai_disable_italic_comment = 1
-    let g:sonokai_better_performance = 1
-    "let g:sonokai_style='atlantis'
-    colorscheme sonokai
+	let g:sonokai_better_performance = 1
+	"let g:sonokai_style='atlantis'
+	colorscheme sonokai
 endfunction
 
 function SyntasticLoad()
