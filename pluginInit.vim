@@ -1,5 +1,4 @@
 
-"Package manager
 function PackageManagerInit()
 	if !isdirectory(expand('~/.vim/pack/minpac'))
 		echo "Package Manager not installed"
@@ -47,4 +46,11 @@ function SyntasticLoad()
 	let g:syntastic_error_symbol = "\u2717"
 	let g:syntastic_warning_symbol = "\u26A0"
 	packadd syntastic
+endfunction
+
+function NetrwConfig()
+	let g:netrw_banner = 0
+	let g:netrw_liststyle = 3
+	let g:netrw_altv = 1
+	let g:netrw_winsize = 13
 endfunction
