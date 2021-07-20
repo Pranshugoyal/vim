@@ -33,11 +33,13 @@ endif
 
 let s:palette = {
       \ 'foreground' : [250, '#bcbcbc'],
-      \ 'background' : [233, '#121212'],
+      \ 'background' : [0,   '#000000'],
       \ 'fade'       : [245, '#8a8a8a'],
       \ 'fade-more'  : [238, '#444444'],
+      \ 'highlight-bg': [233, '#121212'],
       \ 'highlight'  : [230, '#ffffd7'],
       \ 'attention'  : [224, '#ffd7d7'],
+      \ 'standout'   : [226, '#ffff00'],
       \ 'error'      : [203, '#ff5f5f'],
       \ }
 
@@ -108,7 +110,7 @@ call s:None('Special') "<- SpecialChar Tag Delimiter SpecialComment Debug
 call s:Defn('Underlined', s:attr('underline'))
 call s:Defn('Ignore', s:fg('fade-more'))
 call s:Defn('Error', s:fg('error'))
-call s:Defn('Todo', s:attr('reverse'))
+call s:Defn('Todo', s:fg('standout'), s:bg('background'))
 
 " Default group names -- ':h highlight-default'
 call s:Defn('Normal', s:fg('foreground'), s:bg('background'))
@@ -117,12 +119,12 @@ call s:Defn('SpecialKey', s:fg('fade'))
 call s:Defn('NonText', s:fg('fade-more'))
 call s:Link('LineNr', 'NonText')
 call s:Link('CursorLineNr', 'SpecialKey')
-call s:Defn('CursorLine', s:fg('attention'), s:bg('fade-more'))
+call s:Defn('CursorLine', s:fg('attention'), s:bg('highlight-bg'))
 
-call s:Defn('VertSplit', s:fg('fade'), s:bg('fade-more'))
+call s:Defn('VertSplit', s:fg('fade-more'), s:bg('background'))
 
-call s:Defn('StatusLine', s:attr('reverse'))
-call s:Link('StatusLineNC', 'VertSplit')
+call s:Defn('StatusLine', s:fg('foreground'), s:bg('highlight-bg'))
+call s:Defn('StatusLineNC', s:fg('fade'), s:bg('highlight-bg'))
 call s:Defn('StatusLineTerm', s:fg('attention'), s:attr('reverse'))
 call s:Defn('StatusLineTermNC', s:fg('attention'), s:bg('fade-more'))
 call s:Defn('Visual', s:attr('reverse'))
@@ -132,7 +134,7 @@ call s:Defn('Title', s:fg('highlight'))  " titles for output from ':set all', ':
 call s:Link('Question', 'Title')
 call s:Link('MoreMsg', 'Title')
 call s:Link('IncSearch', 'Title')
-call s:Defn('Search', s:fg('highlight'), s:attr('reverse'))
+call s:Defn('Search', s:fg('standout'), s:bg('background'))
 call s:Link('WildMenu', 'Search')
 
 call s:Defn('WarningMsg', s:fg('attention'))
@@ -148,7 +150,7 @@ call s:Link('SpellCap', 'Underlined')
 call s:Link('SpellLocal', 'SpellCap')
 call s:Link('SpellRare', 'SpellCap')
 
-call s:Defn('Folded', s:fg('highlight'), s:bg('fade'))
+call s:Defn('Folded', s:fg('fade'), s:bg('background'))
 call s:Defn('FoldColumn', s:fg('highlight'), s:bg('fade-more'))
 
 call s:Defn('DiffAdd', s:attr('bold'), s:bg('fade-more'))
