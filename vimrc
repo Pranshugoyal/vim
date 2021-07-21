@@ -3,7 +3,7 @@ source ~/.vim/pluginInit.vim
 
 "UI Settings
 call NetrwConfig()
-colorscheme noclown
+colorscheme monochrome
 set number relativenumber
 set ruler showcmd
 set wildmenu

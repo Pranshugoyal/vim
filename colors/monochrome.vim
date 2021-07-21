@@ -1,4 +1,4 @@
-" noclown
+" monochrome
 "
 " A mostly color free theme with a goal of not making your code look like a
 " clown threw up.
@@ -20,7 +20,7 @@ highlight clear
 if exists('syntax_on')
   syntax reset
 endif
-let g:colors_name = 'noclown'
+let g:colors_name = 'monochrome'
 
 " Terminals that don't support italics, resort to rendering them as standout.
 " For comments and other things we italicize, this can become annoying very
@@ -28,15 +28,15 @@ let g:colors_name = 'noclown'
 " know about it.
 if (has('gui_running') ||
       \ has('unix') && system('tput sitm') ==# "\e[3m")
-  let g:noclown_has_italics = 1
+  let g:monochrome_has_italics = 1
 endif
 
 let s:palette = {
-      \ 'foreground' : [250, '#bcbcbc'],
-      \ 'background' : [0,   '#000000'],
+      \ 'foreground' : [251, '#c6c6c6'],
+      \ 'background' : [233, '#121212'],
       \ 'fade'       : [245, '#8a8a8a'],
       \ 'fade-more'  : [238, '#444444'],
-      \ 'highlight-bg': [233, '#121212'],
+      \ 'highlight-bg': [234, '#1c1c1c'],
       \ 'highlight'  : [230, '#ffffd7'],
       \ 'attention'  : [224, '#ffd7d7'],
       \ 'standout'   : [226, '#ffff00'],
@@ -56,7 +56,7 @@ endfunction
 function! s:attr(...)
   let l:alist = a:000
 
-  if !exists('g:noclown_has_italics')
+  if !exists('g:monochrome_has_italics')
     " We're going to modify the list, so make a copy (a:* are immutable)
     let l:alist = copy(a:000)
     call filter(l:alist, "v:val !=# 'italic'")
