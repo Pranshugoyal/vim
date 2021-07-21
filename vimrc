@@ -1,30 +1,25 @@
 
 source ~/.vim/pluginInit.vim
 
+"UI Settings
 call NetrwConfig()
-set number relativenumber signcolumn=number
+colorscheme noclown
+set number relativenumber
 set ruler showcmd
-set wildmenu completeopt+=noselect
-set noequalalways scrolloff=2
-set ignorecase
+set wildmenu
+set noequalalways scrolloff=2 signcolumn=number
 set secure exrc 
 
-set mouse=i
-set clipboard=unnamed
 filetype plugin on
+
+"Editing settings
+set mouse=i
 nnoremap Y y$
-
-"Allows arrow keys to change line
+set ignorecase
+set clipboard=unnamed
 set whichwrap+=<,>,h,l
-
-"Indent settings
+set  completeopt+=noselect
 set smartindent tabstop=4 shiftwidth=4
-
-if &diff
-	call SonokaiLoad()
-else
-	colorscheme noclown
-endif
 
 com! EditFTPlugin exe 'e ~/.vim/after/ftplugin/' . &filetype . '.vim'
 com! Sonokai exe 'call SonokaiLoad()'
