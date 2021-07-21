@@ -145,7 +145,7 @@ call s:Defn('PMenuSel', s:fg('highlight'), s:bg('fade'))
 call s:Defn('PMenuSbar', s:fg('fade'), s:bg('fade'))
 call s:Defn('PMenuThumb', s:fg('fade'), s:bg('highlight'))
 
-call s:Defn('SpellBad', s:fg('attention'), s:attr('italic'))
+call s:Defn('SpellBad', s:fg('error'), s:attr('italic'))
 call s:Link('SpellCap', 'Underlined')
 call s:Link('SpellLocal', 'SpellCap')
 call s:Link('SpellRare', 'SpellCap')
@@ -153,10 +153,10 @@ call s:Link('SpellRare', 'SpellCap')
 call s:Defn('Folded', s:fg('fade'), s:bg('background'))
 call s:Defn('FoldColumn', s:fg('highlight'), s:bg('fade-more'))
 
-call s:Defn('DiffAdd', s:attr('bold'), s:bg('fade-more'))
-call s:Defn('DiffChange', s:bg('fade-more'))
-call s:Defn('DiffDelete', s:fg('error'), s:bg('fade-more'))
-call s:Defn('DiffText', s:bg('attention'), s:fg('background'))
+call s:Defn('DiffAdd', s:bg('highlight-bg'))
+call s:Defn('DiffChange', s:bg('highlight-bg'))
+call s:Defn('DiffDelete', s:fg('fade'), s:bg('highlight-bg'))
+call s:Defn('DiffText', s:bg('background'), s:fg('standout'))
 
 " QuickFix
 call s:Defn('qfFileName', s:fg('fade'))
